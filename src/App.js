@@ -99,8 +99,8 @@ class App extends React.Component {
             labels={labels}
             colors={colors}
             len={len}
-            timeout={800}
-            delay={200}
+            timeout={4000}
+            delay={1000}
             timelineStyle={{
               textAlign: "center",
               fontSize: "40px",

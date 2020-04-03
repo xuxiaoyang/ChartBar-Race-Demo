@@ -1,5 +1,6 @@
 import React from 'react';
 import { Transition } from 'react-transition-group'
+import CountUp from 'react-countup';
 
 const classes = {
     bar: {
@@ -23,7 +24,7 @@ function Bar(props) {
       }
       const barTransitionStyles = {
           entering: props.prevStyle,
-          entered:  props.currStyle,
+          entered: props.currStyle,
           exiting: props.currStyle,
       };
       const posTransitionStyles = {
@@ -47,18 +48,20 @@ function Bar(props) {
                 <div style={{width: `${props.width[1]}%`}}>
                     <div
                         style={{
-                            ...classes.bar, 
-                            ...barDefaultStyle, 
-                            ...barTransitionStyles[state]}} 
+                            ...classes.bar,
+                            ...barDefaultStyle,
+                            ...barTransitionStyles[state]}}
                     />
                 </div>
                 <div style={{
-                    ...posDefaultStyle, 
+                    ...posDefaultStyle,
                     ...posTransitionStyles[state],
                     width: `${props.width[2]}%`
                 }}>
                     <div style={{...props.textBoxStyle}}>
-                        {props.value}
+                        <CountUp start={props.preValue}
+                                  end={props.value}
+                                  duration={props.timeout} />
                     </div>
                 </div>
                 </React.Fragment>)

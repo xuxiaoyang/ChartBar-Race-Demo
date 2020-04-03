@@ -29,7 +29,7 @@ class BarChart extends React.Component {
             started: props.start
         };
     }
-  
+
     componentDidMount(){
       if(this.props.start){
         var intervalId = setInterval(this.update.bind(this), this.props.timeout + this.props.delay);
@@ -40,7 +40,7 @@ class BarChart extends React.Component {
     componentWillUnmount(){
       clearInterval(this.state.intervalId);
     }
-  
+
     update(){
       if(this.state.idx === this.props.timeline.length - 1) {
         clearInterval(this.state.intervalId);
@@ -61,7 +61,7 @@ class BarChart extends React.Component {
         if(descending === undefined) descending = true;
         let toSort = Object.keys(this.props.data).map(name => {
             return {
-                name: name, 
+                name: name,
                 val: this.props.data[name][i]
             };
         });
@@ -77,6 +77,7 @@ class BarChart extends React.Component {
       const currIdx = this.state.idx;
       const prevIdx = (currIdx > 0 ? currIdx - 1 : 0);
       const value = this.props.data[name][currIdx];
+      const preValue = this.props.data[name][prevIdx];
       const hidden = (this.state.currRank[name] === undefined);
       const currStyle = {
         ...this.props.barStyle,
@@ -90,9 +91,9 @@ class BarChart extends React.Component {
         width: `${100 * this.props.data[name][prevIdx]/ this.state.maxVal}%`,
         backgroundColor: this.props.colors[name],
       };
-      return [value, hidden, currStyle, prevStyle];
+      return [value, preValue, hidden, currStyle, prevStyle];
     }
-  
+
     render(){
       return (
         <div style={classes.container}>
@@ -102,12 +103,13 @@ class BarChart extends React.Component {
           <div style={{...classes.barChart, ...this.barChartStyle}}>
             {
               Object.keys(this.props.data).map(name => {
-                const [value, hidden, currStyle, prevStyle] = this.getInfoFromRank(name);
+                const [value, preValue, hidden, currStyle, prevStyle] = this.getInfoFromRank(name);
                 if(hidden) return (<div key={name}></div>);
                 return (
                     <Bar
                       name={name}
                       value={value}
+                      preValue={preValue}
                       label={this.props.labels[name]}
                       currStyle={currStyle}
                       prevStyle={prevStyle}
