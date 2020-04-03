@@ -35,11 +35,11 @@ function Bar(props) {
       return (
           <div style={classes.container}>
             <Transition in={true} timeout={props.timeout}>
-                { 
+                {
                 state => (
                 <React.Fragment>
                 <div style={{
-                    ...posDefaultStyle, 
+                    ...posDefaultStyle,
                     ...posTransitionStyles[state],
                     width: `${props.width[0]}%`
                 }}>
@@ -60,8 +60,9 @@ function Bar(props) {
                 }}>
                     <div style={{...props.textBoxStyle}}>
                         <CountUp start={props.preValue}
-                                  end={props.value}
-                                  duration={props.timeout} />
+                                 end={props.value}
+                                 duration={props.timeout/1000 +1}
+                                 separator=","/>
                     </div>
                 </div>
                 </React.Fragment>)
