@@ -71,21 +71,20 @@ const colors = {
 
 //长条图名称标签
 const labels = {
-  "China":<div style={{ textAlign: "center"}}><div>China</div></div>,
-  "India":<div style={{ textAlign: "center"}}><div>India</div></div>,
-  "USA":<div style={{ textAlign: "center"}}><div>USA</div></div>,
-  "Indonesia":<div style={{ textAlign: "center"}}><div>Indonesia</div></div>,
-  "Pakistan":<div style={{ textAlign: "center"}}><div>Pakistan</div></div>,
-  "Brazil":<div style={{ textAlign: "center"}}><div>Brazil</div></div>,
-  "Nigeria":<div style={{ textAlign: "center"}}><div>Nigeria</div></div>,
-  "Bangladesh":<div style={{ textAlign: "center"}}><div>Bangladesh</div></div>,
-  "Russia":<div style={{ textAlign: "center"}}><div>Russia</div></div>,
-  "Mexico":<div style={{ textAlign: "center"}}><div>Mexico</div></div>,
-  "Japan":<div style={{ textAlign: "center"}}><div>Japan</div></div>,
-  "Ethiopia":<div style={{ textAlign: "center"}}><div>Ethiopia</div></div>,
-  "Philippines":<div style={{ textAlign: "center"}}><div>Philippines</div></div>,
+  "China":<div style={{ textAlign: "center",fontSize: "20px",}}><div>中國 (China)</div></div>,
+  "India":<div style={{ textAlign: "center",fontSize: "20px",}}><div>印度 (India)</div></div>,
+  "USA":<div style={{ textAlign: "center",fontSize: "20px",}}><div>美國 (USA)</div></div>,
+  "Indonesia":<div style={{ textAlign: "center",fontSize: "20px",}}><div>印尼 (Indonesia)</div></div>,
+  "Pakistan":<div style={{ textAlign: "center",fontSize: "20px",}}><div>巴基斯坦 (Pakistan)</div></div>,
+  "Brazil":<div style={{ textAlign: "center",fontSize: "20px",}}><div>巴西 (Brazil)</div></div>,
+  "Nigeria":<div style={{ textAlign: "center",fontSize: "20px",}}><div>奈及利亞 (Nigeria)</div></div>,
+  "Bangladesh":<div style={{ textAlign: "center",fontSize: "20px",}}><div>孟加拉 (Bangladesh)</div></div>,
+  "Russia":<div style={{ textAlign: "center",fontSize: "20px",}}><div>俄羅斯 (Russia)</div></div>,
+  "Mexico":<div style={{ textAlign: "center",fontSize: "20px",}}><div>墨西哥 (Mexico)</div></div>,
+  "Japan":<div style={{ textAlign: "center",fontSize: "20px",}}><div>日本 (Japan)</div></div>,
+  "Ethiopia":<div style={{ textAlign: "center",fontSize: "20px",}}><div>埃塞俄比亞 (Ethiopia)</div></div>,
+  "Philippines":<div style={{ textAlign: "center",fontSize: "20px",}}><div>菲律賓 (Philippines)</div></div>,
 }
-
 
 class App extends React.Component {
   render() {
