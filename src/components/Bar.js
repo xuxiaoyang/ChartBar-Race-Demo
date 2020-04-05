@@ -61,7 +61,7 @@ function Bar(props) {
                     <div style={{...props.textBoxStyle}}>
                         <CountUp start={props.preValue}
                                  end={props.value}
-                                 duration={props.timeout/1000 +1}
+                                 duration={props.timeout/1000.0 + 0.2}
                                  separator=","/>
                     </div>
                 </div>
